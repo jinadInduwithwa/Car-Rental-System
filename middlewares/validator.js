@@ -42,3 +42,9 @@ exports.createVehicleSchema = Joi.object({
 });
 
 
+exports.createCategorySchema = Joi.object({
+    name: Joi.string().min(3).max(50).required(),
+    description: Joi.string().min(3).max(50)
+});
+
+
