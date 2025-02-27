@@ -5,12 +5,12 @@ const { identifierUser, identifierAdmin } = require('../middlewares/identificati
 
 const router = express.Router();
 
-router.get('/all-category', categoryController.getCategory);
-// router.get('/single-vehicle', vehicleController.getSingleVehicles);
-// router.post('/create-vehicle', identifierAdmin, vehicleController.createVehicle);
+router.get('/all-category', categoryController.getCategories);
+router.post('/create-category',identifierAdmin, categoryController.createCategory);
+router.put('/update-category',identifierAdmin, categoryController.updateCategory);
+router.delete('/delete-category',identifierAdmin, categoryController.deleteCategory);
 
-// router.put('/update-vehicle',identifierAdmin, vehicleController.updateVehicle);
-// router.delete('/delete-vehicle',identifierAdmin, vehicleController.deleteVehicle);
+
 
 
 module.exports = router;
