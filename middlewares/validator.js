@@ -31,7 +31,7 @@ exports.acceptForgotPasswordSchema = Joi.object({
 exports.createVehicleSchema = Joi.object({
     brand: Joi.string().min(2).max(50).required().trim(),
     model: Joi.string().min(2).max(50).required().trim(),
-    //category: Joi.string().required().trim(), // Assuming category is an ObjectId (String)
+    category: Joi.string().required().trim(),
     year: Joi.number().integer().min(1950).max(new Date().getFullYear()).required(),
     registrationNumber: Joi.string().min(5).max(20).required().trim(),
     fuelType: Joi.string().valid("Petrol", "Diesel", "Electric", "Hybrid").required(),
@@ -41,10 +41,7 @@ exports.createVehicleSchema = Joi.object({
     imageUrl: Joi.string().uri().trim(),
 });
 
-
-exports.createCategorySchema = Joi.object({
-    name: Joi.string().min(3).max(50).required(),
-    description: Joi.string().min(3).max(50)
+exports.createCategorySchema = Joi.object({ 
+    name: Joi.string().min(3).max(60).required(),
+    description: Joi.string().min(6).max(255).required()
 });
-
-

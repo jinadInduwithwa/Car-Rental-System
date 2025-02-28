@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const authRouter = require('./routers/authRouter');
 const bookingRouter = require('./routers/bookingRouter');
 const vehicleRouter = require('./routers/vehicleRouter');
+const categoryRouter = require('./routers/categoryRouter');
 
 // Middleware
 const app = express();
@@ -28,6 +29,7 @@ mongoose.connect(process.env.MONGO_URI).then(()=>{
 app.use('/api/auth', authRouter);
 app.use('/api/booking', bookingRouter);
 app.use('/api/vehicle', vehicleRouter);
+app.use('/api/category', categoryRouter);
 
 app.get('/',(req,res)=>{
     res.json({message:"Hello, from server"});
