@@ -36,7 +36,7 @@ exports.createCategory = async (req, res) => {
 
 exports.updateCategory = async (req, res) => {
     try {
-        const { _id } = req.query; // Ensure _id is passed as a query param
+        const { _id } = req.query;
 
         const { name, description } = req.body;
 
