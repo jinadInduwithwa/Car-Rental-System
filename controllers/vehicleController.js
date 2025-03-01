@@ -23,14 +23,11 @@ exports.getVehicles = async (req,res) => {
 
 exports.createVehicle = async (req, res) => {
     try {
-       
-
         const { 
             brand, 
             model, 
             category, 
             year, 
-            registrationNumber, 
             fuelType, 
             rentalPricePerDay, 
             additionalPricePayKilometer, 
@@ -45,7 +42,6 @@ exports.createVehicle = async (req, res) => {
             brand, 
             model,  
             year, 
-            registrationNumber, 
             fuelType, 
             rentalPricePerDay, 
             additionalPricePayKilometer, 
@@ -63,7 +59,6 @@ exports.createVehicle = async (req, res) => {
             model, 
             category, 
             year, 
-            registrationNumber, 
             fuelType, 
             rentalPricePerDay, 
             additionalPricePayKilometer, 
@@ -112,7 +107,6 @@ exports.updateVehicle = async (req, res) => {
             model, 
             category, 
             year, 
-            registrationNumber, 
             fuelType, 
             rentalPricePerDay, 
             additionalPricePayKilometer, 
@@ -127,7 +121,6 @@ exports.updateVehicle = async (req, res) => {
             brand, 
             model,  
             year, 
-            registrationNumber, 
             fuelType, 
             rentalPricePerDay, 
             additionalPricePayKilometer, 
@@ -154,7 +147,6 @@ exports.updateVehicle = async (req, res) => {
         existingVehicle.model = model;
         existingVehicle.category = category;
         existingVehicle.year = year;
-        existingVehicle.registrationNumber = registrationNumber;
         existingVehicle.fuelType = fuelType;
         existingVehicle.rentalPricePerDay = rentalPricePerDay;
         existingVehicle.additionalPricePayKilometer = additionalPricePayKilometer;

@@ -33,7 +33,6 @@ exports.createVehicleSchema = Joi.object({
     model: Joi.string().min(2).max(50).required().trim(),
     category: Joi.string().required().trim(),
     year: Joi.number().integer().min(1950).max(new Date().getFullYear()).required(),
-    registrationNumber: Joi.string().min(5).max(20).required().trim(),
     fuelType: Joi.string().valid("Petrol", "Diesel", "Electric", "Hybrid").required(),
     rentalPricePerDay: Joi.number().min(0).required(),
     additionalPricePayKilometer: Joi.number().min(0).required(),
@@ -44,4 +43,18 @@ exports.createVehicleSchema = Joi.object({
 exports.createCategorySchema = Joi.object({ 
     name: Joi.string().min(3).max(60).required(),
     description: Joi.string().min(6).max(255).required()
+});
+
+exports.createBookingSchema = Joi.object({
+    customerName: Joi.string().min(2).max(50).required().trim(),
+    contactNumber: Joi.string().pattern(/^[0-9]{10}$/).required().trim(),
+    email: Joi.string().email().required().trim(),
+    vehicle: Joi.string().min(2).max(50).required().trim(),
+    pickupLocation: Joi.string().default("Godagama").trim(),
+    pickupDate: Joi.date().iso().required(),
+    pickupTime: Joi.string().required().trim(),
+    dropoffDate: Joi.date().iso().required(),
+    dropoffTime: Joi.string().required().trim(),
+    bookingStatus: Joi.string().valid("Confirmed", "Cancelled", "Pending").default("Pending"),
+    userId: Joi.string().required(),
 });

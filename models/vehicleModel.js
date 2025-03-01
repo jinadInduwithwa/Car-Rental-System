@@ -20,12 +20,6 @@ const vehicleSchema = new mongoose.Schema({
         type: Number,
         required: [true, "Year is required!"],
     },
-    registrationNumber: {
-        type: String,
-        required: [true, "Registration number is required!"],
-        unique: true,
-        trim: true,
-    },
     fuelType: {
         type: String,
         required: [true, "Fuel type is required!"],

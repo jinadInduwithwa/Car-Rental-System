@@ -6,11 +6,13 @@ const { identifierUser, identifierAdmin } = require('../middlewares/identificati
 const router = express.Router();
 
 router.get('/all-booking', bookingController.getBooking);
-// router.get('/single-booking', authController.signin);
-// router.post('/create-booking',identifierUser, authController.signout);
+router.get('/single-booking', bookingController.getSingleBooking);
+router.get('/user-booking', identifierUser, bookingController.getBookingsByUser);
+router.post('/create-booking',identifierUser, bookingController.createBooking);
 
-// router.put('/update-booking',identifierUser, authController.sendVerificationCode);
-// router.delete('/delete-booking',identifierUser, authController.verifyVerficationCode);
+router.put('/update-booking',identifierUser, bookingController.updateBooking);
+router.delete('/delete-booking',identifierUser, bookingController.deleteBooking);
+
 
 
 module.exports = router;
