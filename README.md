@@ -29,13 +29,13 @@ This is a car rental application built with Node.js and MongoDB. The application
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/car-rental-project.git
+   git clone https://github.com/jinadInduwithwa/Car-Rental-System.git
    ```
 
 2. Change directory into the project folder:
 
    ```bash
-   cd car-rental-project
+   cd car-rental-System
    ```
 
 3. Install the dependencies:
